@@ -8,6 +8,8 @@ as well as plain old jsp.
 [![docs](https://docs.rs/ructe/badge.svg)](https://docs.rs/ructe)
 [![CI](https://github.com/kaj/ructe/workflows/CI/badge.svg)](https://github.com/kaj/ructe/actions)
 
+## Fork note
+Quick fix for escaping templates with @ when writing javascripts in them.
 
 ## Design criteria
 

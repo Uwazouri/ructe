@@ -419,8 +419,10 @@ fn handle_template(
     outdir: &Path,
 ) -> io::Result<bool> {
     let mut input = File::open(path)?;
-    let mut buf = Vec::new();
-    input.read_to_end(&mut buf)?;
+    let mut strbuf = String::from("");
+    input.read_to_string(& mut strbuf)?;
+    let clean = strbuf.replace("{", "@{").replace("}", "@}");
+    let buf = clean.as_bytes();
     match template(&buf) {
         Ok((_, t)) => {
             let mut data = Vec::new();
