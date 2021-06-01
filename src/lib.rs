@@ -421,7 +421,7 @@ fn handle_template(
     let mut input = File::open(path)?;
     let mut strbuf = String::from("");
     input.read_to_string(& mut strbuf)?;
-    let clean = strbuf.replace("{", "@{").replace("}", "@}");
+    let clean = strbuf.replace("{", "@{").replace("}", "@}").replace(".@", "");
     let buf = clean.as_bytes();
     match template(&buf) {
         Ok((_, t)) => {
